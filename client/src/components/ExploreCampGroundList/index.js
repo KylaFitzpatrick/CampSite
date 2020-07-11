@@ -98,7 +98,10 @@ export function ListItem(props) {
 								>
 									<h3>{props.campGround}</h3>
 								</a>
-								{props.rating ?
+								
+							</CardTitle>
+							<CardSubtitle>
+							{props.rating ?
 									<>
 										<StarRating>{props.rating}</StarRating>
 										{props.number_of_ratings ?
@@ -112,8 +115,6 @@ export function ListItem(props) {
 											: ""}
 									</>
 									: ""}
-							</CardTitle>
-							<CardSubtitle>
 								<h6>
 									<span style={{ fontWeight: "bold" }}>
 										{props.city}, {props.state}

@@ -99,7 +99,6 @@ export function ListItem(props) {
 								
 							</CardTitle>
 							<CardSubtitle>
-
 							{props.rating ?
 									<>
 										<StarRating>{props.rating}</StarRating>
