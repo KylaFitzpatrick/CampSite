@@ -1,14 +1,9 @@
 //@ts-check
 /**@module */
 import React from "react";
-// import "./style.css";
 import SaveBtn from "../SaveBtn";
 import EquipmentList from "../EquipmentList";
-
-//import { Col, Row, Container } from "../Grid";
 import API from "../../utils/API";
-// import { savesCampGrounds } from "../redux/actionCreator";
-// import { connect } from "react-redux";
 import {
 	CardImg,
 	CardBody,
@@ -66,7 +61,7 @@ export function ListItem(props) {
 				<>
 					<hr style={{ border: "1px solid black" }}></hr>
 					<Col lg="5" className="card-image-wrapper">
-						<CardImg top width="100%" alt={props.campGround} src={props.imageURL}></CardImg>
+						<CardImg top width="100%" height="300px" alt={props.campGround} src={props.imageURL}></CardImg>
 						<CardImgOverlay>
 							<SaveBtn
 								onClick={() =>

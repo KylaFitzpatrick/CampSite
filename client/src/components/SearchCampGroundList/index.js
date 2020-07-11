@@ -59,7 +59,7 @@ export function ListItem(props) {
 				<>
 					<hr style={{ border: "1px solid black" }}></hr>
 					<Col lg="5" className="card-image-wrapper">
-						<CardImg top width="100%" alt={props.campGround} src={props.imageURL}></CardImg>
+						<CardImg top width="100%" height="300px" alt={props.campGround} src={props.imageURL}></CardImg>
 						<CardImgOverlay>
 							<SaveBtn
 								onClick={() =>
@@ -96,20 +96,22 @@ export function ListItem(props) {
 								>
 									<h3>{props.campGround}</h3>
 								</a>
-								{props.rating ?
+								
+							</CardTitle>
+							<CardSubtitle>
+
+							{props.rating ?
 									<>
 										<StarRating>{props.rating}</StarRating>
 										{props.number_of_ratings ?
-											<span style={{ fontSize: "16px", paddingLeft: "5px", marginBottom: "-5px !important" }}>
-												{"("}
+											<span style={{ fontSize: "16px" }}>
+												{" ("}
 												{props.number_of_ratings}
 												{")"}
 											</span>
 											: ""}
 									</>
 									: ""}
-							</CardTitle>
-							<CardSubtitle>
 								<h6>
 									<span style={{ fontWeight: "bold" }}>
 										{props.city}, {props.state}

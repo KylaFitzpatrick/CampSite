@@ -1,6 +1,6 @@
 //@ts-check
 /**@module */
-import React from "react";
+import React, { useState } from "react";
 import EquipmentList from "../EquipmentList";
 import API from "../../utils/API";
 import {
@@ -12,14 +12,15 @@ import {
 	Row,
 	Col,
 	CardImgOverlay,
+	Button,
+	Modal,
+	ModalHeader,
+	ModalBody,
+	ModalFooter,
 } from "reactstrap";
 import "./style.css";
 import StarRating from "../StarRating";
-import DeleteBtn from "../DeleteBtn";
 import { updateFavoritesCount } from "../../redux/actionCreator";
-
-
-
 
 /**This file exports both the List and ListItem components
  * @function CampGroundList
@@ -57,14 +58,30 @@ export function ListItem(props) {
 			.catch((err) => console.log(err));
 	};
 
+	const [modal, setModal] = useState(false);
+	const toggle = () => setModal(!modal);
+
 	return (
 		<div className="card-div">
 			<hr style={{ border: "1px solid black" }}></hr>
 			<Col lg="5" className="card-image-wrapper">
-				<CardImg top width="100%" alt={props.campGround} src={props.imageURL}></CardImg>
+				<CardImg top width="100%" height="300px" alt={props.campGround} src={props.imageURL}></CardImg>
 				<CardImgOverlay>
-					<DeleteBtn onClick={() => deleteCampGround(props.id)}>
-					</DeleteBtn>
+				<Button color="danger" style={{ backgroundColor: "forestgreen", marginLeft: "10px" }} onClick={toggle}>
+						Delete
+					</Button>
+					<Modal isOpen={modal} fade={false} toggle={toggle} className="delete-modal">
+						<ModalHeader toggle={toggle}>Delete Favorite</ModalHeader>
+						<ModalBody>
+							Would you like to remove this from your favorites?
+						</ModalBody>
+						<ModalFooter>
+							<Button onClick={() => deleteCampGround(props.id)}>Confirm</Button>{" "}
+							<Button color="secondary" onClick={toggle}>
+								Cancel
+							</Button>
+						</ModalFooter>
+					</Modal>
 				</CardImgOverlay>
 			</Col>
 			<Col lg="7" className="card-body-wrapper">
