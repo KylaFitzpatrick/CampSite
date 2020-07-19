@@ -37,7 +37,7 @@ function About() {
 							</div>
 						</Col>
 						<Col md="7" className="card-image-wrapper" style={{ paddingBottom: "30px" }}>
-							<CardImg top alt="campground" src="/about-1.jpg"></CardImg>
+							<CardImg top width="100%" height="300px" top alt="campground" src="/about-1.jpg"></CardImg>
 						</Col>
 					</div>
 					<Card
@@ -58,7 +58,7 @@ function About() {
 
 					<div className="card-div">
 						<Col md="7" className="card-image-wrapper">
-							<CardImg top alt="campground" src="/about-2.jpg"></CardImg>
+							<CardImg top width="100%" height="300px" top alt="campground" src="/about-2.jpg"></CardImg>
 						</Col>
 						<Col xs="12" md="5" className="card-body-wrapper">
 							<Col xs="12">
