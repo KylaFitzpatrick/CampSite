@@ -13,3 +13,6 @@ button {
     display: flex;
     float: left;
 }
+.close {
+    background-color: white !important;
+}
